@@ -1,0 +1,33 @@
+﻿@model TatilSeyahat.Models.Classes.Blog
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Blogları Güncelleme Sayfası</h3>
+<br />
+@*@using(Html.BeginForm("UpdateBlog","Admin",FormMethod.Post))
+            {
+                @Html.TextBoxFor(x => x.BlogId, new {@class="form-control"},@readonly="readonly")
+                @Html.TextAreaFor(x => x.Description,15,1, new {@class="form-control"})
+            }*@
+
+
+<form method="post" class="form-group">
+    @*@Html.LabelFor(x=>x.Title)
+        @Html.TextBoxFor(x => x.Title, new {@class="form-control"})*@
+    <input type="hidden" name="BlogId" value="@Model.BlogId" class="form-control" />
+    <label>Başlık</label>
+    <input type="text" name="Title" value="@Model.Title" class="form-control" />
+    <br />
+    <label>Tarih</label>
+    <input type="text" name="Date" value="@Model.Date" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" value="@Model.Description" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="BlogImage" value="@Model.BlogImage" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

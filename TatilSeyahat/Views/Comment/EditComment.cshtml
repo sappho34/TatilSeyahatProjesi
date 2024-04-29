@@ -1,0 +1,23 @@
+﻿@model TatilSeyahat.Models.Classes.Comment
+@{
+    ViewBag.Title = "EditComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Yorum Düzenle </h3>
+<br />
+<form method="post">
+    <input type="hidden" name="CommentId" value="@Model.CommentId" />
+    <label>Kullanıcı Adı</label>
+    <input type="text" name="UserName" value="@Model.UserName" class="form-control" />
+    <br />
+    <label>Mail Adresi</label>
+    <input type="text" name="UserEmail" value="@Model.UserEmail" class="form-control" />
+    <br />
+    <label>Yorum</label>
+    <input type="text" name="Comments" value="@Model.Comments" class="form-control" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+

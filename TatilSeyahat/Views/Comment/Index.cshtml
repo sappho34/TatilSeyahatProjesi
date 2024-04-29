@@ -1,0 +1,35 @@
+﻿@using TatilSeyahat.Models.Classes
+@model List<Comment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Yorumlar</h3>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kullanıcı</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Blog</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var item in Model)
+     {
+         <tr>
+             <td>@item.CommentId</td>
+             <td>@item.UserName</td>
+             <td>@item.UserEmail</td>
+             <td>@item.Comments</td>
+             <td>@item.Blog.Title</td>
+             <td><a href="/Comment/DeleteComment/@item.CommentId" class="btn btn-outline-danger">Sİl</a></td>
+             <td><a href="/Comment/EditComment/@item.CommentId" class="btn btn-outline-success">Güncelle</a></td>
+         </tr>
+     }
+
+</table>
+

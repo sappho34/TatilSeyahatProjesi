@@ -1,0 +1,28 @@
+﻿@model TatilSeyahat.Models.Classes.Blog
+@{
+    ViewBag.Title = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Blog Ekle</h2>
+<br />
+
+<form method="post" class="form-group">
+    @*@Html.LabelFor(x=>x.Title)
+    @Html.TextBoxFor(x => x.Title, new {@class="form-control"})*@
+    <input type="hidden" name="BlogId" class="form-control" />
+    <label>Başlık</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Tarih</label>
+    <input type="text" name="Date" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control"  />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="BlogImage" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

@@ -1,0 +1,31 @@
+﻿@using TatilSeyahat.Models.Classes
+@model List<Blog>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+
+    <div class="box-left">
+        @foreach (var item in Model)
+        {
+            <div class="bot-img">
+                <img src="@item.BlogImage" alt="" style="width:150px;height:70px"/>
+            </div>
+            <div class="bot-desc">
+                <p>@item.Description.Substring(0, 100)</p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    @*<div class="box1-left">
+            <div class="bot-img">
+                <img src="@item.BlogImage" alt="" />
+            </div>
+            <div class="bot-desc1">
+                <p>@item.Description.Substring(0, 100) </p>
+            </div>
+            <div class="clear"></div>
+        </div>*@
+    @Html.Action("EnBegendigim2", "Default")
+   
+
+</div>

@@ -1,0 +1,120 @@
+﻿@using TatilSeyahat.Models.Classes
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent">
+                    <h2 class="indent-left margin-bot" style="margin-left:80px;">Ucuza Tatil Planı</h2>
+                    <div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/Themplate/TatilSeyahat/images/glass.png" />
+                            
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Restoranlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/Themplate/TatilSeyahat/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Uçuşlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/Themplate/TatilSeyahat/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Yapılacak Şeyler</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/Themplate/TatilSeyahat/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Araç Kiralama</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_bottom_right_images">
+                        @*<div class="slider">
+                            <ul class="rslides" id="slider1">
+                                <li><img src="~/Themplate/TatilSeyahat/images/img1.jpg" alt=""></li>
+                                <li><img src="~/Themplate/TatilSeyahat/images/img2.jpg" alt=""></li>
+                                <li><img src="~/Themplate/TatilSeyahat/images/img3.jpg" alt=""></li>
+                                <li><img src="~/Themplate/TatilSeyahat/images/img4.jpg" alt=""></li>
+                            </ul>
+                        </div>*@
+                        <div class="slider" style="width:650px;height:410px;">
+                           
+                            <ul class="rslides" id="slider1">
+                                @foreach (var item in Model)
+                                {
+                                    <li><img src="@item.BlogImage" alt="" style="width:650px;height:400px" ></li>
+
+                                }
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Blog Sayfama Hoşgeldiniz..</h3>
+                    <p>Günümüz ölüm ilanlarındaki bütün o yorgun bedenler ve becerikli ellerden daha uzun yaşadım,
+                    aynı zamanda içlerinde en az şey yapanı olmalıyım, neredeyse kapıdan dışarı bile çıkmadım, acaba 
+                    o yüzden mi günüme doyamıyorum? Belki de topluma yararlı bir yaşam sürmüş olsaydım kendimi daha iyi hissederdim. 
+                    Ya da dünyayı dolaşmış olsaydım… En azından İsveç’e bir gidebilirdim. Ya da daha iyisi Almanya’ya… Savaşta yaptıkları 
+                    şeyler hiç doğru değildi, ama ben kin tutan biri değilim, Hamburg’da bir kafede oturup garsonla flört edebilirdim:
+                    “leh könnte dich auffressen, Reinhart.” H. C. Andersen değil miydi gezmek yaşamaktır diyen?</p>
+                </div>
+                <div class="con-bot">
+                    @Html.Action("Partial3", "Default")
+                    @Html.Action("Partial4","Default")
+                </div>
+                <div class="grids">
+                    <div class="box1">
+                        @Html.Action("EnPopuler","Default")
+                        @Html.Action("EnBegendigim", "Default")
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

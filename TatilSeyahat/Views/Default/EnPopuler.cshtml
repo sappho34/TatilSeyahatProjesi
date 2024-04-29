@@ -1,0 +1,17 @@
+﻿@using TatilSeyahat.Models.Classes
+@model List<Blog>
+
+
+<div class="padding">
+    <h4>En popüler 8 Blog</h4>
+    <ul class="list list-pad">
+        @{int count = 0; }
+        @foreach (var item in Model)
+        {
+
+            <li class="list-bg"><span>@{count++;}@count.</span><a href="/Blog/Details/@item.BlogId">@item.Title</a></li>
+
+        }
+        </ul>
+    <a href="/Default/Index" class="link1">Otelleri Gör</a>
+</div>
